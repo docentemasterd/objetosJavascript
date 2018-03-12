@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>objetos,valores y propiedades</title>
+	<script type="text/javascript" src="objetos.js"></script>
+  <script type="text/javascript">
+  
+      function imprime(nombre){
+        var Empleado1 = new Empleado(nombre,'1980',25, 10);
+        document.write("<table border='1'>");
+
+        for(var i in Empleado1) {
+          document.write("<tr><td>" + i + " de " + Empleado1.Nombre + "</td><td> " + Empleado1[i] + "</td></tr>");
+        };
+       
+        document.write("</table>");
+      };
+     
+  </script>
+</head>
+<body>
+    Creacion de un objeto en javascript </br>y muestra de sus propiedades:</br></br>
+    Introduce el nombre del Empleado: <br/><br/>
+    <input type="text" id="nombre" name="" required />
+    <button name="" onclick="imprime(document.getElementById('nombre').value)">Datos</button>
+   
+</body>
+</html>
