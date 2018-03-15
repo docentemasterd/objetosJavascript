@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO JS 1 - Objetos</title>
+</head>
+
+<body onload=Persona();>
+    <script>
+        class Persona {
+            constructor(primerNombre, segundoNombre){
+                this.primerNombre = primerNombre;
+                this.segundoNombre = segundoNombre;
+            }
+            diHola(){
+                alert("Hola, me llamo " + this.primerNombre + " " + this.segundoNombre);
+            }
+        }
+        var persona1 = new Persona("Alicia", "Pérez");
+        var persona2 = new Persona("Sebastian", "López");
+        var funcionSaludar = persona1.diHola;
+        persona1.diHola(); // muestra "Hola, Soy Alicia"
+        persona2.diHola(); // muestra "Hola, Soy Sebastian"
+        //funcionSaludar(); // muestra "Hola, Soy undefined (ó da un error con el
+        // TypeError en modo estricto
+        alert(funcionSaludar === persona1.diHola); // muestra true (verdadero)
+        alert(funcionSaludar === Persona.prototype.diHola); // muestra true (verdadero)
+        funcionSaludar.call(persona1); // muestra "Hola, me llamo Alicia"
+    </script>
+</body>
+
+</html>
